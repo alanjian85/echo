@@ -15,18 +15,8 @@ namespace echo {
             {
                 do_accept();
             }
-
-            void do_accept() {
-                auto new_connection = std::make_shared<connection>(io_context_);
-                acceptor_.async_accept(new_connection->socket(),
-                    [this, new_connection](asio::error_code error) {
-                        if (!error) {
-                            new_connection->start();
-                        }
-
-                        do_accept();
-                    });
-            }
+        private:
+            void do_accept();
         private:
             asio::io_context& io_context_;
             asio::ip::tcp::acceptor acceptor_;
