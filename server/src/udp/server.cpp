@@ -1,5 +1,5 @@
 #include "udp/server.hpp"
-using namespace echo::udp;
+using namespace echo::server::udp;
 
 void server::do_receive() {
     socket_.async_receive_from(asio::buffer(buffer_), endpoint_,

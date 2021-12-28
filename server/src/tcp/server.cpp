@@ -1,5 +1,5 @@
 #include "tcp/server.hpp"
-using namespace echo::tcp;
+using namespace echo::server::tcp;
 
 void server::do_accept() {
     auto new_connection = std::make_shared<connection>(io_context_);

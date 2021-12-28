@@ -1,5 +1,5 @@
 #include "tcp/connection.hpp"
-using namespace echo::tcp;
+using namespace echo::server::tcp;
 
 void connection::do_read() {
     auto self = shared_from_this();
